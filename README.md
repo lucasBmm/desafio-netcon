@@ -1,4 +1,4 @@
-# Projeto de Desafio de Software
+# Projeto de Desafio de Software Netcon Américas
 
 Este é o desafio proposto pela Netcon Américas para vaga de Estágio - Desenvolvimento - Analista de Sistemas.
 
@@ -25,3 +25,11 @@ Também achei que seria muito mais prático rodar essas aplicações em containe
 ### Observações Importantes:
 
 - Ao utilizar Docker, as configurações de ambiente são tratadas automaticamente, proporcionando um ambiente isolado e fácil de configurar.
+
+## Visão da aplicação
+
+frontend: 
+![Alt text](images/frontend.png)
+
+backend:
+![Alt text](images/backend.png)
