@@ -5,44 +5,43 @@ using System;
 namespace NetConConverterApi.Controllers
 {
     /// <summary>
-    /// Recebe um valor de km ou anos luz e devolve esse valor convertido para a outra unidade de medida
+    /// Controller responsável por converter valores entre unidades de medida de quilômetros e anos-luz.
     /// </summary>
-    /// <param name="km">Unidade de medida em quilometros</param>
-    /// <param name="anos-luz">Unidade de medida em anos luz</param>
-    /// <returns>IActionResult</returns>
-    /// <response code="200">Caso tudo dê certo e consiga retornar a unidade de medida corretamente</response>
-    /// <response code="400">Caso algum dos dados fornecidos estiver errado</response>
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [Route("netcon/api/v1/converter")]
     [ApiController]
     public class ConverterController : ControllerBase
     {
-        public ConverterController() { }
-
+        /// <summary>
+        /// Converte um valor de quilômetros para anos-luz ou vice-versa, com base nos parâmetros fornecidos.
+        /// </summary>
+        /// <param name="km">Valor em quilômetros a ser convertido</param>
+        /// <param name="anosLuz">Valor em anos-luz a ser convertido</param>
+        /// <returns>Um IActionResult representando o resultado da conversão</returns>
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
         [HttpGet]
         public IActionResult Convert([FromQuery] string? km, [FromQuery(Name = "anos-luz")] string? anosLuz)
         {
             // Verifica se foi fornecido apenas um dos parâmetros
-            if ( !String.IsNullOrEmpty(km) && !String.IsNullOrEmpty(anosLuz) )
+            if (!String.IsNullOrEmpty(km) && !String.IsNullOrEmpty(anosLuz))
             {
-                return BadRequest(ApiResponse.BadRequestResponse("Invalid request. Only one value must be provided and be greater than zero."));
+                return BadRequest(ApiResponse.BadRequestResponse("Requisição inválida. Apenas um valor deve ser fornecido e ser maior que zero."));
             }
 
             if (!IsValidFloat(km!) && !IsValidFloat(anosLuz!))
             {
-                return BadRequest(ApiResponse.BadRequestResponse("Invalid value format. Please provide valid float values for km or anosLuz."));
+                return BadRequest(ApiResponse.BadRequestResponse("Formato de valor inválido. Por favor, forneça valores válidos em ponto flutuante para km ou anosLuz."));
             }
 
             try
             {
                 if (!String.IsNullOrEmpty(km))
                 {
-                    var intKm = Int32.Parse(km!);
+                    var intKm = Int64.Parse(km!);
 
                     if (intKm < 1)
                     {
-                        return BadRequest(ApiResponse.BadRequestResponse("Invalid value"));
+                        return BadRequest(ApiResponse.BadRequestResponse("Valor inválido"));
                     }
 
                     // Faz a conversão de km para anos-luz
@@ -52,11 +51,11 @@ namespace NetConConverterApi.Controllers
                 }
                 else
                 {
-                    var intAnosLuz = Int32.Parse(anosLuz!);
+                    var intAnosLuz = Int64.Parse(anosLuz!);
 
                     if (intAnosLuz < 1)
                     {
-                        return BadRequest(ApiResponse.BadRequestResponse("Invalid value"));            
+                        return BadRequest(ApiResponse.BadRequestResponse("Valor inválido"));
                     }
 
                     // Faz a conversão de anos-luz para km
@@ -70,6 +69,7 @@ namespace NetConConverterApi.Controllers
                 return BadRequest(ApiResponse.BadRequestResponse(ex.Message));
             }
         }
+
         private static bool IsValidFloat(string value)
         {
             return float.TryParse(value, out _);

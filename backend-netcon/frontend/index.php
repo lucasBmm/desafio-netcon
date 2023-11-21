@@ -62,13 +62,12 @@
                     $anosLuzValue = $_POST["anos-luz"];
                     
                     if ($anosLuzValue >= 1) {
-                        // Faz a requisição para localhost com path /netcon/api/v1/converter?anos-luz=1
                         $url = "$base_url?anos-luz=" . urlencode($anosLuzValue);
                         $response = file_get_contents($url, false, stream_context_create($arrContextOptions));
                         $data = json_decode($response, true);
         
                         if ($data) {
-                            echo "<p>$anosLuzValue anos-luz é aproximadamente {$data['value']}.</p>";
+                            echo "<p>$anosLuzValue anos luz são aproximadamente {$data['value']}.</p>";
                         } else {
                             echo "<p style='color: red;'>Erro na requisição.</p>";
                         }
@@ -91,18 +90,16 @@
                     $kmValue = $_POST["km"];
 
                     if ($kmValue >= 1) {
-                        // Faz a requisição para localhost com path /netcon/api/v1/converter?km=1
                         $url = "$base_url?km=" . urlencode($kmValue);
                         $response = file_get_contents($url, false, stream_context_create($arrContextOptions));
                         $data = json_decode($response, true);
 
-                        echo '<p style="height: 20px;">';
                         if ($data) {
-                            echo "Resultado: <span id='result'>{$data['value']}</span>";
+                            echo "<p>$kmValue quilômetros são aproximadamente {$data['value']}.</p>";
                         } else {
-                            echo "<span style='color: red;'>Erro na requisição.</span>";
+                            echo "<p style='color: red;'>Erro na requisição.</p>";
                         }
-                        echo '</p>';
+
                     } else {
                         echo "<p style='color: red;'>Erro: Insira um valor maior ou igual a 1.</p>";
                     }

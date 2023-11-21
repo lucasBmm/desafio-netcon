@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>rest</name>
+    </assembly>
+    <members>
+        <member name="T:NetConConverterApi.Controllers.ConverterController">
+            <summary>
+            Controller responsável por converter valores entre unidades de medida de quilômetros e anos-luz.
+            </summary>
+        </member>
+        <member name="M:NetConConverterApi.Controllers.ConverterController.Convert(System.String,System.String)">
+            <summary>
+            Converte um valor de quilômetros para anos-luz ou vice-versa, com base nos parâmetros fornecidos.
+            </summary>
+            <param name="km">Valor em quilômetros a ser convertido</param>
+            <param name="anosLuz">Valor em anos-luz a ser convertido</param>
+            <returns>Um IActionResult representando o resultado da conversão</returns>
+        </member>
+        <member name="T:rest.Util.ApiResponse">
+            <summary>
+            Representa uma resposta padrão da API.
+            </summary>
+        </member>
+        <member name="P:rest.Util.ApiResponse.StatusCode">
+            <summary>
+            Código de status HTTP da resposta.
+            </summary>
+        </member>
+        <member name="P:rest.Util.ApiResponse.ErrorMessage">
+            <summary>
+            Mensagem de erro associada à resposta, se houver.
+            </summary>
+        </member>
+        <member name="P:rest.Util.ApiResponse.DateTime">
+            <summary>
+            Data e hora em que a resposta foi gerada.
+            </summary>
+        </member>
+        <member name="P:rest.Util.ApiResponse.Value">
+            <summary>
+            Valor associado à resposta.
+            </summary>
+        </member>
+        <member name="M:rest.Util.ApiResponse.BadRequestResponse(System.String)">
+            <summary>
+            Cria uma instância de ApiResponse representando uma resposta de erro.
+            </summary>
+            <param name="errorMessage">Mensagem de erro.</param>
+            <returns>Instância de ApiResponse para resposta de erro.</returns>
+        </member>
+        <member name="M:rest.Util.ApiResponse.SuccessResponse(System.Double,System.String)">
+            <summary>
+            Cria uma instância de ApiResponse representando uma resposta de sucesso.
+            </summary>
+            <param name="value">Valor associado à resposta.</param>
+            <param name="unit">Unidade da resposta.</param>
+            <returns>Instância de ApiResponse para resposta de sucesso.</returns>
+        </member>
+    </members>
+</doc>

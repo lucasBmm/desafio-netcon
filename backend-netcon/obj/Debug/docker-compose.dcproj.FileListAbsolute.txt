@@ -12,3 +12,4 @@ C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\bin\Debug\rest.
 C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\bin\Debug\rest.xml

@@ -6,8 +6,6 @@ services:
     build:
       context: .
       dockerfile: rest/Dockerfile
-    ports:
-      - "8081:443"
     networks:
       - my-network
 
@@ -17,7 +15,7 @@ services:
       context: .
       dockerfile: frontend/dockerfile
     ports:
-      - "8080:80"
+      - "80:80"
     networks:
       - my-network
 
