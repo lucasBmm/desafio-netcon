@@ -8,6 +8,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor Anos-Luz e Km</title>
+    <style>
+         body {
+            width: 90vw;
+            height: 97vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .forms {
+            width: 100%;
+        }
+
+        .forms section {
+            position: absolute;
+            margin: 20px;
+            width: 40%;
+            text-align: center;
+            height: 150px;
+            border: 2px solid lightblue;
+            display: inline-block;
+        }
+
+        input {
+            width: 80px;
+        }
+    </style>
 </head>
 <body>
     <div style="margin-top: 10%">
