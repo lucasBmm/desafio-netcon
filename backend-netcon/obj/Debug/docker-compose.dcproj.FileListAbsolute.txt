@@ -1,0 +1,14 @@
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\bin\Debug\rest.deps.json
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\bin\Debug\rest.runtimeconfig.json
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\bin\Debug\appsettings.Development.json
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\bin\Debug\appsettings.json
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\bin\Debug\rest.exe
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\bin\Debug\rest.dll
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\bin\Debug\Microsoft.OpenApi.dll
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\bin\Debug\rest.pdb
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\Lucas\Desktop\development\desafio-netcon\backend-netcon\obj\Debug\docker-compose.dcproj.CopyComplete
