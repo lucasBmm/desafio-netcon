@@ -1,5 +1,11 @@
 <?php
-	$base_url = "http://localhost:54231/netcon/api/v1/converter";
+	$base_url = "https://rest/netcon/api/v1/converter";
+
+    $arrContextOptions=array(
+        "ssl"=>array(
+            "verify_peer"=>false,
+            "verify_peer_name"=>false,
+        ));
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +64,7 @@
                     if ($anosLuzValue >= 1) {
                         // Faz a requisição para localhost com path /netcon/api/v1/converter?anos-luz=1
                         $url = "$base_url?anos-luz=" . urlencode($anosLuzValue);
-                        $response = file_get_contents($url);
+                        $response = file_get_contents($url, false, stream_context_create($arrContextOptions));
                         $data = json_decode($response, true);
         
                         if ($data) {
@@ -87,7 +93,7 @@
                     if ($kmValue >= 1) {
                         // Faz a requisição para localhost com path /netcon/api/v1/converter?km=1
                         $url = "$base_url?km=" . urlencode($kmValue);
-                        $response = file_get_contents($url);
+                        $response = file_get_contents($url, false, stream_context_create($arrContextOptions));
                         $data = json_decode($response, true);
 
                         echo '<p style="height: 20px;">';

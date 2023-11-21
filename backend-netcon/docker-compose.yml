@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: rest/Dockerfile
+    ports:
+      - "8081:443"
     networks:
       - my-network
 
@@ -15,7 +17,7 @@ services:
       context: .
       dockerfile: frontend/dockerfile
     ports:
-      - "8080:80"  # Map port 8081 on the host to port 80 in the PHP container
+      - "8080:80"
     networks:
       - my-network
 
