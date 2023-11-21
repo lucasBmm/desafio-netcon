@@ -1,0 +1,14 @@
+# Use an official PHP runtime as a parent image
+FROM php:7.4-apache
+
+# Copy the content of the local src directory to the working directory
+COPY . /var/www/html/
+
+# Optional: Set permissions for the web root
+RUN chown -R www-data:www-data /var/www/html
+
+# Optional: Customize Apache configuration
+COPY ./apache/apache-config.conf /etc/apache2/sites-available/000-default.conf
+
+# Expose port 80
+EXPOSE 80
